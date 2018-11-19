@@ -13,6 +13,7 @@
 
   <button ion-button full color="primary"(click)="loginWithFB()">Login with facebook</button>
     <button ion-button color="primary" menuToggle>Toggle Menu</button>
+	test
   
     <ion-card *ngIf="userData">
 
@@ -22,6 +23,9 @@
       <p>
         <img src="{{userData.picture_large.data.url}}" width="100" alt="{{userData.name}}" />
       </p>
+	  <p>{{userData.email}}</p>
+	  <p>{{userData.name}}</p>
+	  {{accesstoken}}
     </ion-card>
 
 </ion-content>

@@ -7,6 +7,7 @@ import {Facebook,FacebookLoginResponse} from '@ionic-native/facebook';
 })
 export class HelloIonicPage {
   userData=null;
+  accesstoken = null;
   constructor(private facebook:Facebook,private _ngZone: NgZone) {
 
   }
@@ -21,6 +22,10 @@ export class HelloIonicPage {
           
        // this.userData = {email:profile['email'],first_name:profile['first_name'],picture:profile['picture_large']['data']['url'],username:profile['name']};
       });
+	  this.facebook.getAccessToken().then((token)=>{
+		  this.accesstoken = token;
+		  
+	  });
     });
       
   }
