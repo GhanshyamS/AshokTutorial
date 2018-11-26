@@ -10,10 +10,30 @@
 
 <ion-content padding>
   Facebook login:
+ 
 
-  <button ion-button full color="primary"(click)="loginWithFB()">Login with facebook</button>
+  <button ion-button full color="primary"(click)="loginWithFB()" *ngIf="!isLoggedIn">Login with facebook
+
+  </button>
+  <button ion-button full color="primary"(click)="uploadPhoto()" *ngIf="isLoggedIn" >Upload Photo
+    <ion-card *ngIf="userData">
+
+      <ion-card-header>
+      Welcome  {{userData.name}}
+      </ion-card-header>
+      <p>
+        <img src="{{userData.picture_large.data.url}}" width="100" alt="{{userData.name}}" />
+      </p>
+	  <p>{{userData.email}}</p>
+	  <p>{{userData.name}}</p>
+  
+    {{pageAccessToken}}
+    </ion-card>
+      
+
+  </button>
     <button ion-button color="primary" menuToggle>Toggle Menu</button>
-	test
+<button ion-button color="primary" (click)="logout()" *ngIf="isLoggedIn" [hidden]="false">logout</button>
   
     <ion-card *ngIf="userData">
 
@@ -25,7 +45,8 @@
       </p>
 	  <p>{{userData.email}}</p>
 	  <p>{{userData.name}}</p>
-	  {{accesstoken}}
+  
+    {{pageAccessToken}}
     </ion-card>
 
 </ion-content>

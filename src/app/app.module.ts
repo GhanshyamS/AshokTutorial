@@ -3,6 +3,10 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
+import { HttpClientModule } from '@angular/common/http';
+
+
+
 import { HelloIonicPage } from '../pages/hello-ionic/hello-ionic';
 import { ItemDetailsPage } from '../pages/item-details/item-details';
 import { ListPage } from '../pages/list/list';
@@ -19,7 +23,7 @@ import{Facebook,FacebookLoginResponse} from '@ionic-native/facebook';
     ListPage
   ],
   imports: [
-    BrowserModule,
+    BrowserModule ,HttpClientModule,
     IonicModule.forRoot(MyApp),
   ],
   bootstrap: [IonicApp],
@@ -30,6 +34,7 @@ import{Facebook,FacebookLoginResponse} from '@ionic-native/facebook';
     ListPage
   ],
   providers: [
+    
     StatusBar,
     SplashScreen,
     Facebook,
