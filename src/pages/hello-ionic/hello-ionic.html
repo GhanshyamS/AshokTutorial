@@ -32,21 +32,10 @@
       
 
   </button>
+  
     <button ion-button color="primary" menuToggle>Toggle Menu</button>
 <button ion-button color="primary" (click)="logout()" *ngIf="isLoggedIn" [hidden]="false">logout</button>
   
-    <ion-card *ngIf="userData">
-
-      <ion-card-header>
-      Welcome  {{userData.name}}
-      </ion-card-header>
-      <p>
-        <img src="{{userData.picture_large.data.url}}" width="100" alt="{{userData.name}}" />
-      </p>
-	  <p>{{userData.email}}</p>
-	  <p>{{userData.name}}</p>
-  
-    {{pageAccessToken}}
-    </ion-card>
+   
 
 </ion-content>
